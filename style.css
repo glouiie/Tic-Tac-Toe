@@ -1,0 +1,47 @@
+body{
+    background-color: #22A699;
+}
+
+.game-board{
+  
+    display: grid;
+ 
+    border: solid 20px #F29727;
+    
+    height: 40rem;
+    width: 40rem;
+    margin: auto;
+    margin-top: 6rem;
+    
+}
+.board-contents{
+    display: grid;
+    background-color: #F2BE22;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    align-items: center;
+    justify-items: center;
+}
+.item{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+
+/* There is probably a better way to make a grid i'll figure that out later */
+.bottom{
+    border-bottom:  solid 5px #F24C3D;
+
+}
+.right{
+    border-right:  solid 5px #F24C3D;
+
+}
+
+.item:hover{
+    background-color: white;
+   
+}
