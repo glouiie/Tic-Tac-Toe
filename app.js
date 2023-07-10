@@ -1,14 +1,26 @@
-function placeObject() {
+const htmlGameBoard = document.getElementById("game-board");
 
-    const parentContainer = document.getElementById("board-contents");
+const GameBoard = (() => {
 
-    parentContainer.addEventListener("click", (event) => {
-      const clickedItem = event.target;
+  const startingBoard = 
+  ["","","","","","","","",""]
 
-      if (clickedItem.classList.contains("item")) {
-        clickedItem.style.backgroundColor = "red"; // TODO: Update to place current player's symbol
-      }
-    });
+  function createGameBoard(){
+
+    startingBoard.forEach((_cell,index) =>{
+      const cellElement = document.createElement("div")
+      cellElement.classList.add("item")
+      cellElement.id = index
+
+      htmlGameBoard.appendChild(cellElement)
+    })
+
   }
 
-  placeObject();
+    return createGameBoard();
+
+})();
+
+
+
+
