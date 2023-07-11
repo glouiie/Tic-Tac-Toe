@@ -1,5 +1,3 @@
-
-
 const GameBoard = (() => {
 
   const startingBoard = 
@@ -30,17 +28,25 @@ const gameController = (() => {
   const cellElement = document.getElementsByClassName("item")
 
   function handleCellClick(event) {
+
+    if (event.target.classList.contains("naught") || event.target.classList.contains("cross")) {
+      return;
+    }
+
+
     const naughtOrCrossDisplay = document.createElement("div");
     naughtOrCrossDisplay.classList.add(marker);
+    naughtOrCrossDisplay.classList.add("marker");
     event.target.appendChild(naughtOrCrossDisplay);
 
+    checkWinCondition()
     if (marker === "naught") {
       marker = "cross";
     } else {
       marker = "naught";
     }
 
-    const clickedSquare = event.target;
+    
   }
 
   function attachEventListeners() {
@@ -51,7 +57,6 @@ const gameController = (() => {
   return attachEventListeners()
     
 })()
-
 
 
 
