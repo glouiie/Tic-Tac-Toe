@@ -31,9 +31,7 @@ const gameController = (() => {
     naughtOrCrossDisplay.classList.add(marker);
     naughtOrCrossDisplay.classList.add("marker");
     event.target.appendChild(naughtOrCrossDisplay);
-  
-    checkWinCondition(cellElements, marker);
-  
+     checkWinCondition(cellElements, marker);
     marker = marker === "naught" ? "cross" : "naught";
   }
   
@@ -48,25 +46,18 @@ const gameController = (() => {
       [0, 4, 8],
       [2, 4, 6],
     ];
-  
-  
     for (let i = 0; i < winCombinations.length; i++) {
       const combination = winCombinations[i];
       const [a, b, c] = combination;
     
   
       if (
-        cellElements[a] &&
-        cellElements[a].firstChild &&
-        cellElements[a].firstChild.classList.contains(marker) &&
-        cellElements[b] &&
-        cellElements[b].firstChild &&
-        cellElements[b].firstChild.classList.contains(marker) &&
-        cellElements[c] &&
-        cellElements[c].firstChild &&
-        cellElements[c].firstChild.classList.contains(marker)
+        cellElements[a]?.firstChild?.classList.contains(marker) &&
+        cellElements[b]?.firstChild?.classList.contains(marker) &&
+        cellElements[c]?.firstChild?.classList.contains(marker)
       ) {
         alert("we have a winner!")
+        //fix 
       }
     }
   
